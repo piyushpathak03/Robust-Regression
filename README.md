@@ -87,6 +87,9 @@ plt.show()
 
 We observe again that the robust model is performing well ignoring the outliers.
 
+## For more details ,refer this link
+https://www.coursera.org/lecture/robotics-perception/ransac-random-sample-consensus-i-z0GWq
+
 ## About me
 
 **Piyush Pathak**
