@@ -15,6 +15,9 @@ For example, if a variable follows the normal distribution , then an observation
 Outliers in a dataset can bias summary statistics calculated for the variable (e.g. the mean and standard deviation). This results in models that are not performing well and that are highly biased and influenced by the underlying outliers.
 To deal with the presence of outliers in our dataset, we can use a family of robust regression models. These models are known as robust regression algorithms. The two most famous robust regression algorithms are the Random Sample Consensus Regression(RANSAC) and the Huber Regression.
 
+## 1. RANSAC Regression
+## 2. HUBER Regression
+
 ### 2.3 RANSAC Regression
 Random Sample Consensus (RANSAC) is a well-known robust regression algorithm 
 RANSAC tries to separate data into outliers and inliers and fits the model only on the inliers.
