@@ -1,3 +1,6 @@
+To calculate the straight regression line from fictive measurement points (called engine retardation/linear regression), a floating Linear Least Squares Fit (LLSF) algorithm is used. The LLSF estimation is a good method if assumptions are met to obtain regression weights when analyzing the engine data. However, if the data does not satisfy some of these assumptions, then sample estimates and results can be misleading. Especially, outliers violate the assumption of normally distributed residuals in the least-squares regression. The fact of outlying engine power data points (engine dips), in both the direction of the dependent (y-axis) and independent variables (x-axis/timestamp), to the least-squares regression is that they can have a strong adverse effect on the estimate and they may remain unnoticed. Therefore, techniques like RANSAC (Random Sample Consensus) that are able to cope with these problems or to detect outliers (bad) and inliers (good) have been developed by scientists and implemented into SimplexNumerica.
+
+
 # Robust-Regression
 
 ## 1. Introduction
