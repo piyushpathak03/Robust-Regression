@@ -26,6 +26,27 @@ Random Sample Consensus (RANSAC) is a well-known robust regression algorithm
 RANSAC tries to separate data into outliers and inliers and fits the model only on the inliers.
 In this article we will only use RANSAC but almost all statements are true for the Huber Robust regression as well.
 
+The Random Sample Consensus (RANSAC) algorithm proposed by Fischler and Bolles[3] is a general parameter estimation approach designed to cope with a large proportion of outliers in the input data. Its basic operations are:
+
+1. Select sample set
+2. Compute model
+3. Compute and count inliers
+4. Repeat until sufficiently confident
+
+The RANSAC steps in more details are[4]:
+
+1. Select randomly the minimum number of points required to determine the model parameters.
+2. Solve for the parameters of the model.
+3. Determine how many points from the set of all points fit with a predefined tolerance.
+4. If the fraction of the number of inliers over the total number of points in the set exceeds a predefined threshold, re-estimate the model parameters using all the identified inliers and terminate.
+5. Otherwise, repeat steps 1 through 4 (maximum of N times).
+
+Briefly, RANSAC uniformly at random selects a subset of data samples and uses it to estimate model parameters. Then it determines the samples that are within an error tolerance of the generated model.
+
+These samples are considered as agreed with the generated model and called as consensus set of the chosen data samples. Here, the data samples in the consensus as behaved as inliers and the rest as outliers by RANSAC. If the count of the samples in the consensus is high enough, it trains the final model of the consensus by using them.
+
+It repeats this process for a number of iterations and returns the model that has the smallest average error among the generated models. As a randomized algorithm, RANSAC does not guarantee to find the optimal parametric model with respect to the inliers. However, the probability of reaching the optimal solution can be kept over a lower bound by assigning suitable values to algorithm parameters.
+
 ## 3. Working example
 ### 3.1.The artificial dataset
 First, to illustrate the difference between the regular linear regression and the RANSAC robust model, we will create some data that have outliers. The example is based on the examples from the sklearn documentation page.
